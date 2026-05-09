@@ -34,6 +34,24 @@ Main options:
 2) Download all JavaScript referenced on a page with DevTools => Sources
 3) Use the files that are already analyzed to find new filenames
 
+### Working with HTML files containing inline JavaScript
+
+If the target is an HTML file (e.g. `app.html`, `index.html`) rather than a standalone `.js` file, the beautify and deobfuscation tools in phase 1 won't work on it directly. They expect pure JavaScript as input. However, the ripgrep patterns in phase 2 work fine on HTML files as-is, since `rg` searches raw text regardless of format.
+
+For the beautify/deobfuscate/annotate steps, extract the inline script blocks first using this Node.js one-liner for example:
+
+```powershell
+node -e "
+const fs = require('fs');
+const html = fs.readFileSync('target.html', 'utf8');
+const matches = [...html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/gi)];
+fs.writeFileSync('extracted.js', matches.map(m => m[1]).join('\n\n'));
+console.log(matches.length + ' script block(s) extracted');
+"
+```
+
+This concatenates all `<script>` blocks into a single `extracted.js` file, which you can then feed into the normal Phase 1 workflow. If the page has external script tags (`<script src="...">`) those point to separate `.js` files — download them individually as described above.
+
 ---
 ## Phase 1 - Beautify, deobfuscate and annotate
 
