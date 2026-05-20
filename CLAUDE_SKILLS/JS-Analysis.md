@@ -4,7 +4,7 @@ description: >
   JavaScript analysis skill for bug bounty and penetration testing.
   Use this skill whenever the user wants to analyze, deobfuscate, or audit JavaScript and HTML files.
   Also trigger for any request involving JS deobfuscation, secret hunting in source code, or endpoint discovery in JavaScript files.
-  Works on Windows with Node.js and ripgrep.
+  Works on Windows with Node.js and ripgrep. 
 ---
 
 # JavaScript analysis - Beautify, annotation and secrets
