@@ -8,7 +8,7 @@ Lien : https://arxiv.org/abs/2605.22763
 
 Chercheurs : George Tsoukalas, Anton Kovsharov, Sergey Shirobokov, Anja Surina, Moritz Firsching, Gergely Bérczi, Francisco J. R. Ruiz, Arun Suggala, Adam Zsolt Wagner, Eric Wieser, Lei Yu, Aja Huang, Miklós Z. Horváth, Andrew Ferrauiolo, Henryk Michalewski, Codrut Grosu, Thomas Hubert, Matej Balog, Pushmeet Kohli, Swarat Chaudhuri
 
-Entreprise : Google DeepMind (avec Aarhus University)
+Entreprise : Google DeepMind (avec Aarhus University) 
 
 LLM utilisé : Gemini 3.1 Pro (subagents prouveurs), Gemini 3.0 Flash (agents de notation), et AlphaProof comme outil
 
