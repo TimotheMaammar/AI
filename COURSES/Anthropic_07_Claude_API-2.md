@@ -496,3 +496,54 @@ if system:
     ]
 ```
 
+### Files API et exécution de code 
+
+Au lieu d'encoder les fichiers en base64 directement dans chaque message, on peut les uploader une fois et les référencer ensuite par leur ID.
+Workflow :
+
+- On uploade le fichier via un appel API séparé
+- On reçoit un objet metadata avec un ID unique
+- On référence cet ID dans les messages suivants
+
+Utile quand on veut réutiliser le même fichier plusieurs fois ou travailler avec des fichiers volumineux.
+
+Pour l'exécution de code, c'est un outil côté serveur : on n'a pas besoin de fournir d'implémentation. On inclut juste le schéma prédéfini et Claude peut exécuter du Python dans un container Docker isolé.     
+Caractéristiques du container :
+
+- Isolé, sans accès réseau
+- Claude peut exécuter du code plusieurs fois dans une même conversation
+- Les résultats sont capturés et interprétés par Claude
+
+Puisque le container n'a pas d'accès réseau, la Files API devient le seul moyen de faire entrer et sortir des données de l'environnement d'exécution.
+
+```
+file_metadata = upload('streaming.csv')
+
+add_user_message(messages, [
+    {
+        "type": "text",
+        "text": """Run a detailed analysis to determine major drivers of churn.
+        Your final output should include at least one detailed plot summarizing your findings."""
+    },
+    {"type": "container_upload", "file_id": file_metadata.id},
+])
+
+chat(
+    messages,
+    tools=[{"type": "code_execution_20250522", "name": "code_execution"}]
+)
+```
+
+La réponse contient plusieurs types de blocs :
+
+- Blocs texte : l'analyse et les explications de Claude
+- Server tool use blocks : le code que Claude a décidé d'exécuter
+- Code execution tool result blocks : les sorties du code
+
+Claude peut exécuter du code plusieurs fois de façon itérative dans une seule réponse.
+
+Quand Claude génère un graphique ou un rapport, il est stocké dans le container et récupérable via la Files API. On cherche les blocs code_execution_output dans la réponse, qui contiennent les IDs des fichiers générés :
+
+```
+download_file("file_id_from_response")
+```
