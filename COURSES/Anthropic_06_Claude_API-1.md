@@ -1,4 +1,4 @@
-# Building with the Claude API (1/2)
+# Building with the Claude API (1/3)
 
 Claude traite tout texte reçu en quatre étapes :
 1. Tokenisation : le texte est découpé en tokens (mots, parties de mots, ponctuation, espaces, etc.).
