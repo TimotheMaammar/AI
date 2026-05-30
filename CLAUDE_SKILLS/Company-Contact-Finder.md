@@ -5,7 +5,7 @@ description: >
   certificate transparency, RDAP/WHOIS and official business registers. Given a list of company names (or a single name), it returns the contact emails it can find, grouped per company. 
   Use this whenever the task involves collecting, looking up, or compiling contact emails / points of contact for companies, whether the request arrives from a user, another skill, 
   or a calling script, and whether the companies are Polish or anywhere else. 
-  Intended for legitimate use (sales, recruiting, authorized security recon, journalism); respects robots.txt and rate-limits requests.
+  Intended for legitimate use (sales, recruiting, authorized security recon, journalism); respects robots.txt and rate-limits requests. 
 ---
 
 
