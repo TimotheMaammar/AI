@@ -10,7 +10,7 @@ Date : 20/05/2026
 
 Chercheurs : Ze Sheng, Zhicheng Chen, Qingxiao Xu, Kewen Zhu, Jeff Huang
 
-## Abstract
+## Abstract 
 
 Les LLM appliqués à la détection de vulnérabilités souffrent de trois problèmes structurels : taux de faux positifs élevé faute de vérification reproductible, granularité de localisation sous-optimale (trop large au niveau fonction, trop étroite au niveau ligne), et difficulté à raisonner sur les dépendances croisées entre fonctions. FuzzingBrain V2 est un système multi-agents qui attaque ces trois points simultanément, en s'appuyant sur OSS-Fuzz de Google comme oracle de vérification automatique.
 
