@@ -1,4 +1,4 @@
-# Meetup Wroclaw 15/06/2026
+# 15/06/2026 - Claude Community Wrocław #1
 
 ## Notes en vrac
 
