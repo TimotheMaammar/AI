@@ -56,4 +56,4 @@ ls /usr/share/ghidra/support/analyzeHeadless   # must exist, this is what ryuumo
 wsl.exe -e uvx --version
 ```
 
-After this, reboot Claude Code and the terminal session after completing all the steps above, then ask Claude to test the new MCP tools against any binary.
+Reboot Claude Code and the terminal session after completing all the steps above, then ask Claude to test the new MCP tools against any binary.
