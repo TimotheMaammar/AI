@@ -1,4 +1,4 @@
-# GPT-6 Astra, Looped Transformers, and Hidden Reasoning
+# GPT-6 Astra, Looped Transformers, and Hidden Reasoning 
 
 ## References
 
