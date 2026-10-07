@@ -2,7 +2,7 @@
 
 ## About
 
-Title : On the Navier–Stokes Millennium Prize Problem
+Title : On the Navier–Stokes Millennium Prize Problem 
 
 Links : 
 - https://openai.com/index/navier-stokes-solution/
