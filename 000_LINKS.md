@@ -10,3 +10,4 @@
 - https://research.google/blog/
 - https://www.nature.com/natmachintell/
 - https://www.nature.com/npjai/
+- https://80000hours.org/ai/
